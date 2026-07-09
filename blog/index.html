@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — Beatrice Builds | Learning in Public</title>
+    <meta name="description" content="Beatrice W Wanjiru's blog on Data Analytics, Data Science, and Technology — tutorials, ELT and Power BI project breakdowns, and lessons learned.">
+    <meta name="author" content="Beatrice W Wanjiru">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#0c0f1a">
+    <link rel="canonical" href="https://beatrice-wakarima.github.io/Beatrice/blog/">
+
+    <meta property="og:site_name" content="Beatrice Builds">
+    <meta property="og:title" content="Blog — Beatrice Builds | Learning in Public">
+    <meta property="og:description" content="Tutorials, project breakdowns, and reflections from a data analytics engineer building in public.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://beatrice-wakarima.github.io/Beatrice/assets/images/og-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://beatrice-wakarima.github.io/Beatrice/blog/">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog — Beatrice Builds | Learning in Public">
+    <meta name="twitter:description" content="Tutorials, project breakdowns, and reflections from a data analytics engineer building in public.">
+    <meta name="twitter:image" content="https://beatrice-wakarima.github.io/Beatrice/assets/images/og-preview.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Beatrice Builds Blog",
+      "url": "https://beatrice-wakarima.github.io/Beatrice/blog/",
+      "description": "Tutorials, project breakdowns, and reflections on Data Analytics, Data Science, and Power BI.",
+      "isPartOf": { "@type": "WebSite", "name": "Beatrice Builds", "url": "https://beatrice-wakarima.github.io/Beatrice/" },
+      "author": { "@type": "Person", "name": "Beatrice W Wanjiru" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://beatrice-wakarima.github.io/Beatrice/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://beatrice-wakarima.github.io/Beatrice/blog/" }
+      ]
+    }
+    </script>
+
+    <style>
+        /* ── BLOG-SPECIFIC EXTENSIONS (uses shared tokens from style.css) ── */
+
+        .btn {
+            display:inline-block; padding:12px 24px; border-radius:10px;
+            font-weight:700; text-decoration:none; cursor:pointer;
+            border:1px solid transparent; transition: background-color .2s, border-color .2s;
+            background: var(--cyan); color:#03130f; font-family: var(--ff-sans); font-size:14px;
+        }
+        .btn:hover { background:#4fe6de; }
+
+        .blue-border {
+            border: 1px solid var(--line-strong);
+            padding: 40px; border-radius: var(--r-md);
+            box-shadow: 0 0 28px rgba(45,217,208,0.08);
+            margin-bottom: 8px;
+            background: var(--panel);
+        }
+
+        .btn-gold { background: var(--amber); color: #1a1306; }
+        .btn-gold:hover { background:#ffce70; }
+        .btn-outline {
+            background:none; border:1px solid var(--line-strong);
+            color: var(--text-secondary);
+        }
+        .btn-outline:hover { background:rgba(255,255,255,0.04); color:#fff; }
+        .btn-sm { padding:8px 16px; font-size:13px; }
+
+        #blog-hero {
+            display:flex; flex-direction:column; align-items:center;
+            text-align:center; padding-top: 24px; padding-bottom: 48px;
+        }
+        .hero-eyebrow {
+            display: inline-block;
+            background: var(--cyan-dim);
+            color: var(--cyan);
+            font-family: var(--ff-mono);
+            font-size:13px; font-weight:700; letter-spacing:.08em;
+            text-transform:uppercase; padding:6px 14px; border-radius:20px;
+            margin-bottom:20px; border:1px solid rgba(45,217,208,0.2);
+        }
+        #blog-hero h1 { font-size:3.25rem; margin:0 0 12px; line-height:1.1; }
+        #blog-hero .subtitle {
+            font-size:1.2rem; color:var(--text-secondary); font-weight:400; margin:0;
+            max-width:640px; line-height:1.6;
+        }
+        #blog-hero .lead-text {
+            max-width:580px; margin:20px auto 0; line-height:1.8;
+            color:var(--text-muted); font-size:0.95rem;
+        }
+        .hero-tags {
+            display:flex; gap:8px; flex-wrap:wrap; justify-content:center;
+            margin-top:24px;
+        }
+        .hero-tag {
+            padding:5px 12px; border-radius:20px; font-size:12px; font-weight:600;
+            font-family: var(--ff-mono);
+            background:rgba(45,217,208,0.08); color:var(--cyan);
+            border:1px solid rgba(45,217,208,0.2);
+        }
+
+        .categories-grid {
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
+            gap:18px;
+        }
+        .cat-card {
+            padding:28px 24px; border-radius:var(--r-md);
+            background: var(--panel-raised);
+            border:1px solid var(--line);
+            transition: transform .2s, border-color .25s, box-shadow .25s;
+            cursor:default;
+        }
+        .cat-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(45,217,208,0.35);
+            box-shadow: 0 8px 28px rgba(45,217,208,0.08);
+        }
+        .cat-icon {
+            width:42px; height:42px; border-radius:10px;
+            display:flex; align-items:center; justify-content:center;
+            margin-bottom:16px; font-size:20px;
+        }
+        .cat-card h3 { margin:0 0 12px; font-size:1rem; color:var(--text-primary); }
+        .cat-tags { display:flex; flex-wrap:wrap; gap:6px; }
+        .cat-tag {
+            font-family: var(--ff-mono);
+            font-size:11px; font-weight:600; padding:3px 9px;
+            border-radius:12px; background:rgba(255,255,255,0.05);
+            color:var(--text-muted); border:1px solid var(--line);
+        }
+
+        .articles-grid {
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+            gap:20px;
+        }
+        .article-card {
+            display:flex; flex-direction:column;
+            background: var(--panel-raised);
+            border-radius: var(--r-md);
+            border:1px solid var(--line);
+            overflow:hidden;
+            transition: transform .2s, box-shadow .25s;
+        }
+        .article-card:hover { transform:translateY(-4px); box-shadow:0 12px 32px rgba(0,0,0,0.4); }
+        .article-thumb {
+            height:8px;
+            background: linear-gradient(90deg, var(--cyan), var(--fuchsia));
+        }
+        .article-thumb.gold { background: linear-gradient(90deg, var(--amber), #f97316); }
+        .article-thumb.teal { background: linear-gradient(90deg, var(--green), var(--cyan)); }
+        .article-body { padding:24px; flex:1; display:flex; flex-direction:column; }
+        .article-meta {
+            display:flex; align-items:center; gap:10px; margin-bottom:12px;
+        }
+        .article-category {
+            font-family: var(--ff-mono);
+            font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em;
+            color:var(--amber); background:rgba(245,184,61,0.08);
+            padding:3px 8px; border-radius:8px;
+        }
+        .article-read-time { font-size:12px; color:var(--text-muted); }
+        .article-body h3 { margin:0 0 10px; font-size:1.05rem; line-height:1.4; }
+        .article-body p  { color:var(--text-secondary); font-size:14px; line-height:1.65; margin:0 0 20px; flex:1; }
+        .article-footer { display:flex; align-items:center; justify-content:space-between; padding-top:16px; border-top:1px solid var(--line); }
+        .article-date  { font-size:12px; color:var(--text-muted); }
+
+        #connect { text-align:center; }
+        .connect-links { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:24px; }
+        .connect-link {
+            display:inline-flex; align-items:center; gap:8px;
+            padding:11px 20px; border-radius:10px;
+            background:var(--panel-raised); border:1px solid var(--line);
+            color:var(--text-secondary); text-decoration:none; font-weight:600; font-size:14px;
+            transition: background .2s, color .2s, border-color .2s;
+        }
+        .connect-link:hover { background:rgba(255,255,255,0.04); color:#fff; border-color:var(--line-strong); }
+        .connect-link svg { width:18px; height:18px; }
+
+        @media (max-width:768px) {
+            #blog-hero h1 { font-size:2.2rem; }
+            .blue-border { padding:24px; }
+        }
+    </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header>
+    <nav class="navbar" aria-label="Primary">
+        <a href="../index.html" class="nav-root">Beatrice Builds</a>
+        <ul>
+            <li><a href="../index.html#projects" class="navlink">Projects</a></li>
+            <li><a href="../contact/index.html" class="navlink">Contact</a></li>
+            <li><a href="../blog/index.html" class="navlink nav-garden active" aria-current="page">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22V12M12 12C12 12 5 12 5 6C5 4 6 2 8 2C10 2 12 4 12 6M12 12C12 12 19 12 19 6C19 4 18 2 16 2C14 2 12 4 12 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Blog
+            </a></li>
+        </ul>
+    </nav>
+</header>
+
+<main id="main-content">
+
+    <!-- ── HERO ──────────────────────────────────────────────────────── -->
+    <section id="blog-hero" class="wrap">
+        <span class="hero-eyebrow">Knowledge Hub</span>
+        <h1>Learning in <span class="highlight-gold">Public</span></h1>
+        <p class="subtitle">Documenting my journey through Data Analytics, Data Science, Project Management, and Technology.</p>
+        <p class="lead-text">
+            I believe that learning out loud is the most honest form of teaching. Here I share tutorials,
+            project breakdowns, lessons learned the hard way, and reflections from building real solutions
+            with Python, SQL, Power BI, and everything in between.
+        </p>
+        <div class="hero-tags">
+            <span class="hero-tag">Data Analytics</span>
+            <span class="hero-tag">Data Science</span>
+            <span class="hero-tag">SQL & Python</span>
+            <span class="hero-tag">Project Management</span>
+            <span class="hero-tag">Digital Marketing</span>
+        </div>
+    </section>
+
+    <!-- ── CATEGORIES ─────────────────────────────────────────────────── -->
+    <section id="categories" class="wrap">
+        <div class="blue-border">
+            <div class="section-header center">
+                <h2>Browse by <span class="highlight-gold">Topic</span></h2>
+                <p>Four domains I actively study, build, and write about. Pick a category to find content that matches where you are in your journey.</p>
+            </div>
+            <div class="categories-grid">
+
+                <div class="cat-card">
+                    <div class="cat-icon" style="background:rgba(45,217,208,0.1); color:var(--cyan);">📊</div>
+                    <h3>Data Analytics</h3>
+                    <div class="cat-tags">
+                        <span class="cat-tag">SQL</span>
+                        <span class="cat-tag">Power BI</span>
+                        <span class="cat-tag">Tableau</span>
+                        <span class="cat-tag">Excel</span>
+                        <span class="cat-tag">Dashboard Design</span>
+                    </div>
+                </div>
+
+                <div class="cat-card">
+                    <div class="cat-icon" style="background:rgba(245,184,61,0.1); color:var(--amber);">🧠</div>
+                    <h3>Data Science Journey</h3>
+                    <div class="cat-tags">
+                        <span class="cat-tag">Python</span>
+                        <span class="cat-tag">Machine Learning</span>
+                        <span class="cat-tag">EDA Projects</span>
+                        <span class="cat-tag">Statistics</span>
+                        <span class="cat-tag">Portfolio Projects</span>
+                    </div>
+                </div>
+
+                <div class="cat-card">
+                    <div class="cat-icon" style="background:rgba(20,184,166,0.1); color:#14b8a6;">🗂️</div>
+                    <h3>Project Management</h3>
+                    <div class="cat-tags">
+                        <span class="cat-tag">Agile</span>
+                        <span class="cat-tag">Scrum</span>
+                        <span class="cat-tag">Stakeholder Mgmt</span>
+                        <span class="cat-tag">Real Project Lessons</span>
+                    </div>
+                </div>
+
+                <div class="cat-card">
+                    <div class="cat-icon" style="background:rgba(249,115,22,0.1); color:#f97316;">📣</div>
+                    <h3>Digital Marketing</h3>
+                    <div class="cat-tags">
+                        <span class="cat-tag">SEO</span>
+                        <span class="cat-tag">Analytics</span>
+                        <span class="cat-tag">Marketing Data</span>
+                        <span class="cat-tag">Campaign Performance</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ── ARTICLES ────────────────────────────────────────────────────── -->
+    <section id="articles" class="wrap">
+        <div class="blue-border">
+            <div class="section-header center">
+                <h2>Latest <span class="highlight-gold">Articles</span></h2>
+                <p>Honest, technical, and practical — written for people who actually want to build things.</p>
+            </div>
+            <div class="articles-grid">
+
+                <article class="article-card">
+                    <div class="article-thumb"></div>
+                    <div class="article-body">
+                        <div class="article-meta">
+                            <span class="article-category">Data Engineering</span>
+                            <span class="article-read-time">8 min read</span>
+                        </div>
+                        <h3>What I Learned Building My First ELT Pipeline</h3>
+                        <p>A candid breakdown of the SPAERO project: Docker surprises, PostgreSQL schema decisions, idempotent truncate-then-append logic, and what I'd do differently.</p>
+                        <div class="article-footer">
+                            <span class="article-date">Coming soon</span>
+                            <a href="#" class="btn btn-outline btn-sm">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-thumb gold"></div>
+                    <div class="article-body">
+                        <div class="article-meta">
+                            <span class="article-category">SQL</span>
+                            <span class="article-read-time">6 min read</span>
+                        </div>
+                        <h3>SQL Mistakes Beginners Make (And How to Fix Them)</h3>
+                        <p>From implicit type coercion to joining before filtering, the ten SQL patterns that silently corrupt your results — and the habits that prevent them.</p>
+                        <div class="article-footer">
+                            <span class="article-date">Coming soon</span>
+                            <a href="#" class="btn btn-outline btn-sm">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-thumb teal"></div>
+                    <div class="article-body">
+                        <div class="article-meta">
+                            <span class="article-category">Case Study</span>
+                            <span class="article-read-time">10 min read</span>
+                        </div>
+                        <h3>My Cyclistic Case Study Journey</h3>
+                        <p>A full walkthrough of my Google Data Analytics capstone: how I structured the analysis, the SQL queries that uncovered member vs. casual rider behaviour, and what the viz revealed.</p>
+                        <div class="article-footer">
+                            <span class="article-date">Coming soon</span>
+                            <a href="#" class="btn btn-outline btn-sm">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-thumb"></div>
+                    <div class="article-body">
+                        <div class="article-meta">
+                            <span class="article-category">Power BI</span>
+                            <span class="article-read-time">7 min read</span>
+                        </div>
+                        <h3>Creating Executive Dashboards in Power BI</h3>
+                        <p>Design principles, DAX patterns, and the exact layout decisions I used to build a six-page Power BI report that executives actually read and act on.</p>
+                        <div class="article-footer">
+                            <span class="article-date">Coming soon</span>
+                            <a href="#" class="btn btn-outline btn-sm">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-thumb gold"></div>
+                    <div class="article-body">
+                        <div class="article-meta">
+                            <span class="article-category">Career</span>
+                            <span class="article-read-time">9 min read</span>
+                        </div>
+                        <h3>Transitioning from Finance to Data Science</h3>
+                        <p>What an economics background actually gives you, which skills transfer directly, which need a complete rebuild, and the mindset shift nobody warns you about.</p>
+                        <div class="article-footer">
+                            <span class="article-date">Coming soon</span>
+                            <a href="#" class="btn btn-outline btn-sm">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ── DIGITAL GARDEN ──────────────────────────────────────────────── -->
+    <section id="garden-section" class="garden-section wrap">
+        <div class="garden-panel">
+            <div class="garden-canvas-wrap">
+                <canvas id="gardenCanvas" width="460" height="220" aria-hidden="true"></canvas>
+            </div>
+            <h2>Explore My <span style="color:var(--green)">Digital Garden</span></h2>
+            <p>
+                My complete learning notes, research, tutorials, and technical documentation —
+                organised in an Obsidian-powered knowledge base and published for anyone to explore.
+            </p>
+            <div class="garden-stats">
+                <div class="garden-stat">
+                    <strong>100+</strong>
+                    <span>Notes & Pages</span>
+                </div>
+                <div class="garden-stat">
+                    <strong>4</strong>
+                    <span>Core Domains</span>
+                </div>
+                <div class="garden-stat">
+                    <strong>Always</strong>
+                    <span>Growing</span>
+                </div>
+            </div>
+            <a href="https://beatricebuilds.vercel.app/" target="_blank" rel="noopener noreferrer" class="garden-btn">
+                Open Knowledge Base →
+            </a>
+        </div>
+    </section>
+
+    <!-- ── CONNECT ─────────────────────────────────────────────────────── -->
+    <section id="connect" class="wrap">
+        <div class="section-header center">
+            <h2>Follow the <span class="highlight-gold">Journey</span></h2>
+            <p>I share project updates, quick lessons, and data insights across these channels. Come build alongside me.</p>
+        </div>
+        <div class="connect-links">
+            <a href="https://github.com/beatrice-wakarima" target="_blank" rel="noopener noreferrer" class="connect-link">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                GitHub
+            </a>
+            <a href="https://linkedin.com/in/beatrice-wakarima" target="_blank" rel="noopener noreferrer" class="connect-link">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+            </a>
+            <a href="mailto:beatiewakarima1@gmail.com" class="connect-link">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                Email Me
+            </a>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <nav class="footer-links" aria-label="Footer">
+        <a href="../about/index.html">About</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../blog/index.html">Blog</a>
+        <a href="../contact/index.html">Contact</a>
+    </nav>
+    <p>&copy; <span id="year"></span> Beatrice Builds. All rights reserved.</p>
+</footer>
+
+<script src="../assets/js/script.js"></script>
+</body>
+</html>

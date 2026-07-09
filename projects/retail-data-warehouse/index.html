@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retail Sales Analytics & Data Warehouse — Case Study | Beatrice Builds</title>
+<meta name="description" content="Case study: a Dockerized ELT pipeline on PostgreSQL, Python, and Apache Airflow that turned messy retail transaction data into a validated, dimensional warehouse.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0c0f1a">
+<link rel="canonical" href="https://beatrice-wakarima.github.io/Beatrice/projects/retail-data-warehouse/">
+
+<meta property="og:site_name" content="Beatrice Builds">
+<meta property="og:title" content="Retail Sales Analytics & Data Warehouse — Case Study">
+<meta property="og:description" content="A Dockerized ELT pipeline that turned messy retail transaction data into a validated, dimensional warehouse.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://beatrice-wakarima.github.io/Beatrice/projects/retail-data-warehouse/">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Retail Sales Analytics & Data Warehouse — Case Study">
+<meta name="twitter:description" content="A Dockerized ELT pipeline built on PostgreSQL, Python, and Apache Airflow.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="../../assets/icons/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="../../assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<link rel="stylesheet" href="../../assets/css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Retail Sales Analytics & Data Warehouse",
+  "url": "https://beatrice-wakarima.github.io/Beatrice/projects/retail-data-warehouse/",
+  "author": { "@type": "Person", "name": "Beatrice W Wanjiru" },
+  "about": "A Dockerized ELT pipeline built on PostgreSQL, Python, and Apache Airflow",
+  "keywords": "Data Engineering, PostgreSQL, Apache Airflow, Docker, ELT, Data Warehouse"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://beatrice-wakarima.github.io/Beatrice/" },
+    { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://beatrice-wakarima.github.io/Beatrice/#projects" },
+    { "@type": "ListItem", "position": 3, "name": "Retail Sales Analytics & Data Warehouse", "item": "https://beatrice-wakarima.github.io/Beatrice/projects/retail-data-warehouse/" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header>
+    <nav class="navbar" aria-label="Primary">
+        <a href="../../index.html" class="nav-root">Beatrice Builds</a>
+        <ul>
+            <li><a href="../../about/index.html" class="navlink">About</a></li>
+            <li><a href="../../index.html#projects" class="navlink active" aria-current="page">Projects</a></li>
+            <li><a href="../../contact/index.html" class="navlink">Contact</a></li>
+            <li><a href="../../blog/index.html" class="navlink nav-garden">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22V12M12 12C12 12 5 12 5 6C5 4 6 2 8 2C10 2 12 4 12 6M12 12C12 12 19 12 19 6C19 4 18 2 16 2C14 2 12 4 12 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Blog
+            </a></li>
+        </ul>
+    </nav>
+</header>
+
+<main id="main-content">
+
+    <section class="wrap cs-hero">
+        <p class="cs-breadcrumb"><a href="../../index.html">Home</a> / <a href="../../index.html#projects">Projects</a> / Retail Sales Analytics &amp; Data Warehouse</p>
+        <p class="cs-kicker">Case Study · Data Engineering</p>
+        <h1>Retail Sales Analytics &amp; Data Warehouse</h1>
+        <p class="project-summary">A Dockerized ELT pipeline that turned messy retail transaction data into a validated, dimensional warehouse — built on Python, PostgreSQL, and Apache Airflow.</p>
+        <div class="case-tags">
+            <span class="tag">Python</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Apache Airflow</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Pytest</span>
+            <span class="tag">Power BI</span>
+        </div>
+        <div class="cs-hero-actions">
+            <a href="https://github.com/Beatrice-Wakarima/pet_retail_pipeline" target="_blank" rel="noopener noreferrer" class="pill-btn pill-cyan">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                View on GitHub
+            </a>
+            <a href="../../index.html#projects" class="pill-btn pill-ghost">← All Projects</a>
+        </div>
+    </section>
+
+    <nav class="wrap toc-nav" aria-label="On this page">
+        <a href="#overview">Overview</a>
+        <a href="#snapshot">Snapshot</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#problem">Business Problem</a>
+        <a href="#objectives">Objectives</a>
+        <a href="#solution">Solution</a>
+        <a href="#decisions">Engineering Decisions</a>
+        <a href="#stack">Tech Stack</a>
+        <a href="#data-model">Data Model</a>
+        <a href="#pipeline">Pipeline Walkthrough</a>
+        <a href="#quality">Data Quality</a>
+        <a href="#impact">Business Impact</a>
+        <a href="#outcomes">Outcomes</a>
+        <a href="#lessons">Lessons Learned</a>
+        <a href="#future">Future Improvements</a>
+        <a href="#repo">Repository</a>
+    </nav>
+
+    <section id="overview" class="wrap cs-section">
+        <h2><span class="cs-num">01</span> Project Overview</h2>
+        <p class="cs-lead">Retail transactional data lived in disconnected, raw CSV sources with a 17.6% customer telemetry gap and silent lookup mapping errors. This project builds a fully containerized ELT pipeline — orchestrated by Apache Airflow, validated by pytest — that turns that raw data into a Dockerized, dimensional PostgreSQL warehouse feeding 7 analytical mart views and a Power BI reporting layer.</p>
+    </section>
+
+    <section id="snapshot" class="wrap cs-section">
+        <h2><span class="cs-num">02</span> Project Snapshot</h2>
+        <table class="snapshot-table">
+            <tbody>
+                <tr><th scope="row">Business Problem</th><td>Retail transactional CSVs with a 17.6% customer telemetry gap and silent lookup mapping errors, corrupting downstream revenue metrics.</td></tr>
+                <tr><th scope="row">My Role</th><td>Solo data engineer — pipeline orchestration, data quality testing, dashboard delivery.</td></tr>
+                <tr><th scope="row">Technologies</th><td>Python, PostgreSQL, Apache Airflow, Docker, pytest, Power BI.</td></tr>
+                <tr><th scope="row">Engineering Decisions</th><td>Separate PostgreSQL instances for Airflow metadata vs. the retail warehouse, isolating system config from business logic.</td></tr>
+                <tr><th scope="row">Business Impact</th><td>Daily pipeline halts automatically on data-quality failures, preventing corrupt revenue figures from ever reaching a dashboard.</td></tr>
+                <tr><th scope="row">Measurable Outcomes</th><td>7 analytical mart views · full pytest validation suite · Dockerized single-command deployment.</td></tr>
+                <tr><th scope="row">Lessons Learned</th><td>Fail-fast validation gates are cheaper than a bad number reaching an executive dashboard.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="architecture" class="wrap cs-section">
+        <h2><span class="cs-num">03</span> Architecture Diagram</h2>
+        <p class="cs-lead">Raw retail CSVs move through a Dockerized, Airflow-orchestrated ELT pipeline into a validated PostgreSQL warehouse.</p>
+        <div class="arch-diagram-wrap">
+            <div class="mermaid">
+graph LR
+    A[Raw Retail CSVs] --> B[Python Extractor]
+    B --> C[(PostgreSQL Staging)]
+    C --> D[SQL: Star Schema]
+    D --> E[7 Analytical Mart Views]
+    F[Apache Airflow DAG] -.orchestrates.-> B
+    F -.orchestrates.-> D
+    G[Pytest Validation Suite] -.gates.-> E
+    E --> H[Flask / Chart.js Dashboard]
+    E --> I[Power BI .pbit Template]
+    subgraph Docker Compose
+    B
+    C
+    D
+    end
+            </div>
+        </div>
+    </section>
+
+    <section id="problem" class="wrap cs-section">
+        <h2><span class="cs-num">04</span> Business Problem</h2>
+        <p class="cs-lead">Retail transactional data lived in disconnected, raw CSV sources with severe structural anomalies — including a 17.6% customer telemetry gap, product description drift, and silent lookup table mapping errors. Without an automated framework, these issues caused broken table joins and corrupt revenue metrics in downstream dashboards.</p>
+    </section>
+
+    <section id="objectives" class="wrap cs-section">
+        <h2><span class="cs-num">05</span> Objectives</h2>
+        <div class="cs-two-col">
+            <ul>
+                <li>Resolve the 17.6% customer telemetry gap without discarding usable transaction rows.</li>
+                <li>Automate ELT with idempotent, retry-safe daily runs.</li>
+            </ul>
+            <ul>
+                <li>Catch data-quality failures automatically, before they reach a dashboard.</li>
+                <li>Package the entire stack for single-command, reproducible deployment.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="solution" class="wrap cs-section">
+        <h2><span class="cs-num">06</span> Solution Overview</h2>
+        <p class="cs-lead">A fully containerized Staging → Star Schema → Mart Layer architecture runs under Docker Compose. Apache Airflow orchestrates idempotent Extract, Transform, Validate, and Load steps using a LocalExecutor, while a dedicated pytest suite and runtime SQL validation gates verify data integrity before the 7 mart views are ever queried by the Flask/Chart.js dashboard or Power BI template.</p>
+    </section>
+
+    <section id="decisions" class="wrap cs-section">
+        <h2><span class="cs-num">07</span> Engineering Decisions</h2>
+        <div class="cs-two-col">
+            <ul>
+                <li><strong>Why Docker?</strong> Guarantees the entire stack — Airflow, PostgreSQL, pipeline code — runs identically anywhere with one command.</li>
+                <li><strong>Why separate PostgreSQL instances?</strong> Isolates Airflow's internal metadata from the retail_dw business warehouse, so orchestration state never risks corrupting business data.</li>
+                <li><strong>Why pytest over manual QA?</strong> Automated, repeatable validation catches regressions on every run, not just when someone remembers to check.</li>
+            </ul>
+            <ul>
+                <li><strong>Why Apache Airflow's LocalExecutor?</strong> Right-sized for a single-host deployment without the operational overhead of distributed executors.</li>
+                <li><strong>Why fail-fast validation gates?</strong> Stopping the pipeline on a threshold breach is cheaper than a business team acting on a wrong number.</li>
+                <li><strong>Why both a Flask dashboard and a Power BI template?</strong> Flask/Chart.js for a lightweight public demo, Power BI for the format most business stakeholders already use.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="stack" class="wrap cs-section">
+        <h2><span class="cs-num">08</span> Technology Stack</h2>
+        <div class="tech-stack-grid">
+            <div class="tech-group"><h4>Languages</h4><ul><li>Python</li><li>SQL</li></ul></div>
+            <div class="tech-group"><h4>Data Engineering</h4><ul><li>Apache Airflow</li><li>ELT design</li></ul></div>
+            <div class="tech-group"><h4>Databases</h4><ul><li>PostgreSQL</li></ul></div>
+            <div class="tech-group"><h4>Visualization</h4><ul><li>Flask / Chart.js</li><li>Power BI</li></ul></div>
+            <div class="tech-group"><h4>Infrastructure</h4><ul><li>Docker</li><li>Docker Compose</li></ul></div>
+            <div class="tech-group"><h4>Testing</h4><ul><li>pytest</li><li>SQL validation gates</li></ul></div>
+        </div>
+    </section>
+
+    <section id="data-model" class="wrap cs-section">
+        <h2><span class="cs-num">09</span> Data Model</h2>
+        <p class="cs-lead">The warehouse is modeled around the sales transaction grain, with 7 mart views layered on top.</p>
+        <table class="data-model-table">
+            <thead><tr><th>Table</th><th>Type</th><th>Grain</th><th>Description</th></tr></thead>
+            <tbody>
+                <tr><td class="tbl-name">dim_customer</td><td>Dimension</td><td>1 row / customer</td><td>Customer attributes, with the telemetry gap explicitly flagged rather than dropped.</td></tr>
+                <tr><td class="tbl-name">dim_product</td><td>Dimension</td><td>1 row / product</td><td>Standardized product descriptions, resolved from drifted source naming.</td></tr>
+                <tr><td class="tbl-name">fct_sales</td><td>Fact</td><td>1 row / transaction line</td><td>Core sales transaction facts joined to customer, product, and date.</td></tr>
+                <tr><td class="tbl-name">mart_revenue_by_region</td><td>Mart View</td><td>Aggregated</td><td>One of 7 analytical mart views built on top of fct_sales.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="pipeline" class="wrap cs-section">
+        <h2><span class="cs-num">10</span> Pipeline Walkthrough</h2>
+        <div class="pipeline-steps">
+            <div class="pipeline-step">
+                <div class="pipeline-step-num">1</div>
+                <div class="pipeline-step-content"><h4>Extract</h4><p>Airflow triggers a Python task to read raw retail CSVs on schedule.</p></div>
+            </div>
+            <div class="pipeline-step">
+                <div class="pipeline-step-num">2</div>
+                <div class="pipeline-step-content"><h4>Load (Raw)</h4><p>Raw rows land in PostgreSQL staging, isolated from the Airflow metadata database.</p></div>
+            </div>
+            <div class="pipeline-step">
+                <div class="pipeline-step-num">3</div>
+                <div class="pipeline-step-content"><h4>Transform</h4><p>SQL builds the star schema, resolving lookup mapping errors and product description drift.</p></div>
+            </div>
+            <div class="pipeline-step">
+                <div class="pipeline-step-num">4</div>
+                <div class="pipeline-step-content"><h4>Validate</h4><p>The pytest suite and SQL validation gates check row counts, nulls, and referential integrity.</p></div>
+            </div>
+            <div class="pipeline-step">
+                <div class="pipeline-step-num">5</div>
+                <div class="pipeline-step-content"><h4>Build Marts</h4><p>7 analytical mart views are built on top of the validated star schema.</p></div>
+            </div>
+            <div class="pipeline-step">
+                <div class="pipeline-step-num">6</div>
+                <div class="pipeline-step-content"><h4>Serve</h4><p>The Flask/Chart.js dashboard and Power BI template query the mart views directly.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quality" class="wrap cs-section">
+        <h2><span class="cs-num">11</span> Data Quality Strategy</h2>
+        <p class="cs-lead">A dedicated pytest suite and runtime SQL validation gates verify data integrity before dashboard ingestion. The daily pipeline halts execution automatically if critical business thresholds — like the customer telemetry gap — are breached, rather than silently propagating bad data downstream.</p>
+    </section>
+
+    <section id="impact" class="wrap cs-section">
+        <h2><span class="cs-num">12</span> Business Impact</h2>
+        <p class="cs-lead">The entire BI infrastructure spins up with a single command, running a daily pipeline that halts execution if critical business thresholds fail. Downstream Power BI dashboards process cleanly structured, pre-aggregated semantic views instantly, eliminating dashboard drift and ensuring flawless financial sign preservation for retail returns.</p>
+    </section>
+
+    <section id="outcomes" class="wrap cs-section">
+        <h2><span class="cs-num">13</span> Measurable Outcomes</h2>
+        <div class="impact-outcomes-grid">
+            <div class="outcome-tile"><div class="val">7</div><div class="lbl">Mart Views</div></div>
+            <div class="outcome-tile"><div class="val">17.6%</div><div class="lbl">Telemetry Gap Resolved</div></div>
+            <div class="outcome-tile"><div class="val">100%</div><div class="lbl">Pytest Coverage of Gates</div></div>
+            <div class="outcome-tile"><div class="val">1</div><div class="lbl">Command Deployment</div></div>
+        </div>
+    </section>
+
+    <section id="lessons" class="wrap cs-section">
+        <h2><span class="cs-num">14</span> Lessons Learned</h2>
+        <div class="cs-two-col">
+            <ul>
+                <li>Flagging missing data explicitly beats silently dropping rows — the gap itself became a trackable metric.</li>
+                <li>Separating orchestration metadata from business data prevents an entire class of accidental corruption.</li>
+            </ul>
+            <ul>
+                <li>Fail-fast validation is far cheaper to build than to explain after a bad number reaches leadership.</li>
+                <li>Docker Compose removed nearly all "works on my machine" friction during development.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="future" class="wrap cs-section">
+        <h2><span class="cs-num">15</span> Future Improvements</h2>
+        <div class="cs-two-col">
+            <ul>
+                <li>Add CI/CD via GitHub Actions to run the pytest suite on every commit.</li>
+                <li>Introduce incremental loading instead of full-table refreshes for larger datasets.</li>
+            </ul>
+            <ul>
+                <li>Add monitoring/alerting on Airflow DAG failures.</li>
+                <li>Migrate SQL transformations to dbt for versioned, testable models.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="repo" class="wrap cs-section">
+        <h2><span class="cs-num">16</span> GitHub Repository</h2>
+        <p class="cs-lead">Full source code, tests, and documentation are available on GitHub.</p>
+        <div class="repo-cta">
+            <a href="https://github.com/Beatrice-Wakarima/pet_retail_pipeline" target="_blank" rel="noopener noreferrer" class="pill-btn pill-cyan">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                Source Code &amp; Documentation
+            </a>
+            <a href="../../index.html#projects" class="pill-btn pill-ghost">← Back to All Projects</a>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <nav class="footer-links" aria-label="Footer">
+        <a href="../../about/index.html">About</a>
+        <a href="../../index.html#projects">Projects</a>
+        <a href="../../blog/index.html">Blog</a>
+        <a href="../../contact/index.html">Contact</a>
+    </nav>
+    <p><span class="mono">&copy; <span id="year"></span></span> Beatrice Builds. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: { fontFamily: 'JetBrains Mono, monospace' } });
+</script>
+<script src="../../assets/js/script.js"></script>
+</body>
+</html>

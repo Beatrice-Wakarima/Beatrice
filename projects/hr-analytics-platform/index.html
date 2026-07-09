@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HR &amp; People Analytics Warehouse — Case Study | Beatrice Builds</title>
+<meta name="description" content="Case study: a governed HR data warehouse built with Python, dbt, and BigQuery that replaced four disconnected spreadsheet systems with one trusted reporting layer.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0c0f1a">
+<link rel="canonical" href="https://beatrice-wakarima.github.io/Beatrice/projects/hr-analytics-platform/">
+
+<meta property="og:site_name" content="Beatrice Builds">
+<meta property="og:title" content="HR & People Analytics Warehouse — Case Study">
+<meta property="og:description" content="A governed HR data warehouse built with Python, dbt, and BigQuery that replaced four disconnected spreadsheet systems with one trusted reporting layer.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://beatrice-wakarima.github.io/Beatrice/projects/hr-analytics-platform/">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HR & People Analytics Warehouse — Case Study">
+<meta name="twitter:description" content="A governed HR data warehouse built with Python, dbt, and BigQuery.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="../../assets/icons/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="../../assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<link rel="stylesheet" href="../../assets/css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "HR & People Analytics Warehouse",
+  "url": "https://beatrice-wakarima.github.io/Beatrice/projects/hr-analytics-platform/",
+  "author": { "@type": "Person", "name": "Beatrice W Wanjiru" },
+  "about": "A governed HR data warehouse built with Python, dbt, and BigQuery",
+  "keywords": "Data Engineering, dbt, BigQuery, Power BI, ELT, Data Warehouse"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://beatrice-wakarima.github.io/Beatrice/" },
+    { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://beatrice-wakarima.github.io/Beatrice/#projects" },
+    { "@type": "ListItem", "position": 3, "name": "HR & People Analytics Warehouse", "item": "https://beatrice-wakarima.github.io/Beatrice/projects/hr-analytics-platform/" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header>
+    <nav class="navbar" aria-label="Primary">
+        <a href="../../index.html" class="nav-root">Beatrice Builds</a>
+        <ul>
+            <li><a href="../../about/index.html" class="navlink">About</a></li>
+            <li><a href="../../index.html#projects" class="navlink active" aria-current="page">Projects</a></li>
+            <li><a href="../../contact/index.html" class="navlink">Contact</a></li>
+            <li><a href="../../blog/index.html" class="navlink nav-garden">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22V12M12 12C12 12 5 12 5 6C5 4 6 2 8 2C10 2 12 4 12 6M12 12C12 12 19 12 19 6C19 4 18 2 16 2C14 2 12 4 12 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Blog
+            </a></li>
+        </ul>
+    </nav>
+</header>
+
+<main id="main-content">
+
+    <section class="wrap cs-hero">
+        <p class="cs-breadcrumb"><a href="../../index.html">Home</a> / <a href="../../index.html#projects">Projects</a> / HR &amp; People Analytics Warehouse</p>
+        <p class="cs-kicker">Case Study · Data Engineering</p>
+        <h1>HR &amp; People Analytics Warehouse</h1>
+        <p class="project-summary">A governed HR data warehouse that replaced four disconnected spreadsheet systems with one trusted reporting layer — built on Python, dbt, and BigQuery.</p>
+        <div class="case-tags">
+            <span class="tag">Python</span>
+            <span class="tag">dbt</span>
+            <span class="tag">BigQuery</span>
+            <span class="tag">Power Automate Desktop</span>
+            <span class="tag">DAX</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">DuckDB</span>
+            <span class="tag">Docker</span>
+        </div>
+        <div class="cs-hero-actions">
+            <a href="https://github.com/beatrice-wakarima/zeni_hr_analytics" target="_blank" rel="noopener noreferrer" class="pill-btn pill-cyan">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                View on GitHub
+            </a>
+            <a href="../../index.html#projects" class="pill-btn pill-ghost">← All Projects</a>
+        </div>
+    </section>
+
+    <nav class="wrap toc-nav" aria-label="On this page">
+        <a href="#overview">Overview</a>
+        <a href="#snapshot">Snapshot</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#problem">Business Problem</a>
+        <a href="#objectives">Objectives</a>
+        <a href="#solution">Solution</a>
+        <a href="#decisions">Engineering Decisions</a>
+        <a href="#stack">Tech Stack</a>
+        <a href="#data-model">Data Model</a>
+        <a href="#pipeline">Pipeline Walkthrough</a>
+        <a href="#quality">Data Quality</a>
+        <a href="#impact">Business Impact</a>
+        <a href="#outcomes">Outcomes</a>
+        <a href="#lessons">Lessons Learned</a>
+        <a href="#future">Future Improvements</a>
+        <a href="#repo">Repository</a>
+    </nav>
+
+    <section id="overview" class="wrap cs-section">
+        <h2><span class="cs-num">01</span> Project Overview</h2>
+        <p class="cs-lead">This project consolidates HR, payroll, and facilities records — previously scattered across four disconnected local systems in CSV, JSON, and Excel formats — into a single governed BigQuery warehouse. A Power Automate Desktop flow lands raw files on a schedule, dbt transforms them through a layered Staging → Intermediate → Marts architecture, and the resulting star schema feeds a Power BI reporting layer used for headcount, compensation, and workforce planning.</p>
+    </section>
+
+    <section id="snapshot" class="wrap cs-section">
+        <h2><span class="cs-num">02</span> Project Snapshot</h2>
+        <table class="snapshot-table">
+            <tbody>
+                <tr><th scope="row">Business Problem</th><td>HR, payroll, and facilities data scattered across 4 disconnected local systems in mismatched CSV/JSON/Excel formats.</td></tr>
+                <tr><th scope="row">My Role</th><td>Solo data engineer — pipeline design, dbt modeling, data quality, dashboard delivery.</td></tr>
+                <tr><th scope="row">Technologies</th><td>Python, Power Automate Desktop, BigQuery, dbt, DuckDB, Power BI, Docker.</td></tr>
+                <tr><th scope="row">Records Processed</th><td>500-employee dataset across 4 source systems.</td></tr>
+                <tr><th scope="row">Data Sources</th><td>4 local systems (CSV, JSON, Excel).</td></tr>
+                <tr><th scope="row">Engineering Decisions</th><td>Staging → Intermediate → Marts layering; fuzzy-matching isolated from semantic models.</td></tr>
+                <tr><th scope="row">Business Impact</th><td>Single governed reporting layer; eliminated manual file assembly and dashboard drift.</td></tr>
+                <tr><th scope="row">Measurable Outcomes</th><td>12-model star schema · 38 passing dbt tests · fully Dockerized deployment.</td></tr>
+                <tr><th scope="row">Lessons Learned</th><td>Value of layered architectures and automated data-quality gates over manual QA.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="architecture" class="wrap cs-section">
+        <h2><span class="cs-num">03</span> Architecture Diagram</h2>
+        <p class="cs-lead">Raw files are picked up locally, landed in BigQuery, and transformed through a layered dbt architecture before reaching Power BI.</p>
+        <div class="arch-diagram-wrap">
+            <div class="mermaid">
+graph LR
+    A[Raw HR Files CSV / JSON / Excel] --> B[Power Automate Desktop]
+    B --> C[Python Loader load_to_bigquery.py]
+    C --> D[(BigQuery Raw Layer)]
+    D --> E[dbt: Staging]
+    E --> F[dbt: Intermediate]
+    F --> G[dbt: Marts Star Schema]
+    G --> H[DuckDB Validation Gate]
+    H --> I[Power BI Dashboard]
+    I --> J[End Users: HR and Leadership]
+            </div>
+        </div>
+    </section>
+
+    <section id="problem" class="wrap cs-section">
+        <h2><span class="cs-num">04</span> Business Problem</h2>
+        <p class="cs-lead">Critical human resource, payroll, and facilities data lived in isolated, mismatched formats across four disconnected local systems. The data suffered from severe structural anomalies: missing office foreign keys requiring manual inference, string-formatted salary data, missing header rows, and inconsistent naming conventions (e.g. "New-York" vs. "New York City"). Without an automated integration layer, manual reporting resulted in silent data drops, broken table joins, and conflicting employee metrics across offices.</p>
+    </section>
+
+    <section id="objectives" class="wrap cs-section">
+        <h2><span class="cs-num">05</span> Objectives</h2>
+        <div class="cs-two-col">
+            <ul>
+                <li>Automate ingestion of HR data from four disconnected local systems into a central warehouse.</li>
+                <li>Standardize inconsistent formats, naming conventions, and data types across sources.</li>
+            </ul>
+            <ul>
+                <li>Build a governed, testable star schema that supports reliable executive reporting.</li>
+                <li>Catch data-quality issues before they reach a dashboard, not after.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="solution" class="wrap cs-section">
+        <h2><span class="cs-num">06</span> Solution Overview</h2>
+        <p class="cs-lead">A Power Automate Desktop flow monitors local files on a schedule and triggers a Python script to land raw datasets into BigQuery. From there, a modular dbt pipeline moves data through Staging, Intermediate, and Marts layers — standardizing types, resolving fuzzy-matched office names, and unifying mismatched JSON structures into a single employee grain. DuckDB validation gates run before data ever reaches the Power BI layer.</p>
+    </section>
+
+    <section id="decisions" class="wrap cs-section">
+        <h2><span class="cs-num">07</span> Engineering Decisions</h2>
+        <div class="cs-two-col">
+            <ul>
+                <li><strong>Why BigQuery?</strong> Serverless scaling and native dbt support made it a low-overhead warehouse for a solo-maintained project.</li>
+                <li><strong>Why dbt?</strong> Version-controlled, testable SQL transformations beat ad-hoc scripts for long-term maintainability.</li>
+                <li><strong>Why a layered (Staging → Intermediate → Marts) architecture?</strong> Isolates messy fuzzy-matching logic from the final semantic models, so downstream reports never touch raw inconsistencies directly.</li>
+            </ul>
+            <ul>
+                <li><strong>Why DuckDB for validation?</strong> Fast, local, in-process checks without adding warehouse compute cost for QA-only queries.</li>
+                <li><strong>Why Power Automate Desktop over a cloud trigger?</strong> Matched the reality of HR files living on local systems without existing cloud integration.</li>
+                <li><strong>Why a star schema?</strong> Employee/office/compensation facts and dimensions map cleanly to how HR actually asks questions — by department, location, and time period.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="stack" class="wrap cs-section">
+        <h2><span class="cs-num">08</span> Technology Stack</h2>
+        <div class="tech-stack-grid">
+            <div class="tech-group"><h4>Languages</h4><ul><li>Python</li><li>SQL</li><li>DAX</li></ul></div>
+            <div class="tech-group"><h4>Data Engineering</h4><ul><li>dbt</li><li>Power Automate Desktop</li></ul></div>
+            <div class="tech-group"><h4>Databases</h4><ul><li>BigQuery</li><li>DuckDB</li></ul></div>
+            <div class="tech-group"><h4>Visualization</h4><ul><li>Power BI</li></ul></div>
+            <div class="tech-group"><h4>Infrastructure</h4><ul><li>Docker</li></ul></div>
+            <div class="tech-group"><h4>Version Control</h4><ul><li>Git &amp; GitHub</li></ul></div>
+        </div>
+    </section>
+
+    <section id="data-model" class="wrap cs-section">
+        <h2><span class="cs-num">09</span> Data Model</h2>
+        <p class="cs-lead">The Marts layer exposes a star schema built around the employee grain.</p>
+        <table class="data-model-table">
+            <thead><tr><th>Table</th><th>Type</th><th>Grain</th><th>Description</th></tr></thead>
+            <tbody>
+                <tr><td class="tbl-name">dim_employee</td><td>Dimension</td><td>1 row / employee</td><td>Employee attributes: department, role, tenure, status.</td></tr>
+                <tr><td class="tbl-name">dim_office</td><td>Dimension</td><td>1 row / office</td><td>Standardized office locations, resolved from fuzzy-matched source names.</td></tr>
+                <tr><td class="tbl-name">dim_date</td><td>Dimension</td><td>1 row / day</td><td>Calendar dimension for time-based reporting.</td></tr>
+                <tr><td class="tbl-name">fct_employee_compensation</td><td>Fact</td><td>1 row / employee / pay period</td><td>Compensation facts joined to employee, office, and date dimensions.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="pipeline" class="wrap cs-section">
+        <h2><span class="cs-num">10</span> Pipeline Walkthrough</h2>
+        <div class="pipeline-steps">
+            <div class="pipeline-step">
+                <div class="pipeline-step-num">1</div>
+                <div class="pipeline-step-content"><h4>Extract</h4><p>Power Automate Desktop detects new/updated local files on a schedule.</p></div>
+            </div>
+            <div class="pipeline-step">
+                <div class="pipeline-step-num">2</div>
+                <div class="pipeline-step-content"><h4>Load (Raw)</h4><p>A Python script lands raw files into BigQuery without transformation, preserving source fidelity.</p></div>
+            </div>
+            <div class="pipeline-step">
+                <div class="pipeline-step-num">3</div>
+                <div class="pipeline-step-content"><h4>Transform: Staging</h4><p>dbt standardizes types and column names per source.</p></div>
+            </div>
+            <div class="pipeline-step">
+                <div class="pipeline-step-num">4</div>
+                <div class="pipeline-step-content"><h4>Transform: Intermediate</h4><p>Fuzzy-matches office names and unifies mismatched JSON structures into a single employee grain.</p></div>
+            </div>
+            <div class="pipeline-step">
+                <div class="pipeline-step-num">5</div>
+                <div class="pipeline-step-content"><h4>Transform: Marts</h4><p>Builds the final star schema (dim_employee, dim_office, fct_employee_compensation).</p></div>
+            </div>
+            <div class="pipeline-step">
+                <div class="pipeline-step-num">6</div>
+                <div class="pipeline-step-content"><h4>Validate &amp; Serve</h4><p>DuckDB validation gates run before Power BI refreshes the executive dashboard.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quality" class="wrap cs-section">
+        <h2><span class="cs-num">11</span> Data Quality Strategy</h2>
+        <p class="cs-lead">Custom singular dbt tests alongside DuckDB validation gates enforce uniqueness and referential integrity constraints, and run end-to-end row balance audits to catch accidental data fan-out or silent drops before dashboard ingestion — 38 tests run on every build.</p>
+    </section>
+
+    <section id="impact" class="wrap cs-section">
+        <h2><span class="cs-num">12</span> Business Impact</h2>
+        <p class="cs-lead">The entire pipeline can be triggered locally or scheduled to run end-to-end without manual intervention. Downstream Power BI dashboards consume governed, pre-aggregated semantic views, eliminating manual file assembly, fixing dashboard drift, and giving HR a single trusted source for workforce reporting.</p>
+    </section>
+
+    <section id="outcomes" class="wrap cs-section">
+        <h2><span class="cs-num">13</span> Measurable Outcomes</h2>
+        <div class="impact-outcomes-grid">
+            <div class="outcome-tile"><div class="val">500</div><div class="lbl">Employee Records</div></div>
+            <div class="outcome-tile"><div class="val">4</div><div class="lbl">Source Systems Unified</div></div>
+            <div class="outcome-tile"><div class="val">12</div><div class="lbl">dbt Models</div></div>
+            <div class="outcome-tile"><div class="val">38</div><div class="lbl">Passing Tests</div></div>
+        </div>
+    </section>
+
+    <section id="lessons" class="wrap cs-section">
+        <h2><span class="cs-num">14</span> Lessons Learned</h2>
+        <div class="cs-two-col">
+            <ul>
+                <li>Layered architectures (Staging → Intermediate → Marts) pay off fast once fuzzy-matching logic gets messy.</li>
+                <li>Validation gates catch problems that manual spot-checking reliably misses.</li>
+            </ul>
+            <ul>
+                <li>Designing for the employee grain early avoided painful re-modeling later.</li>
+                <li>Local-to-cloud automation needs to match how the business actually stores its files, not an idealized version of it.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="future" class="wrap cs-section">
+        <h2><span class="cs-num">15</span> Future Improvements</h2>
+        <div class="cs-two-col">
+            <ul>
+                <li>Move orchestration from Power Automate Desktop to Apache Airflow for better observability.</li>
+                <li>Add CI/CD via GitHub Actions to run dbt tests on every pull request.</li>
+            </ul>
+            <ul>
+                <li>Introduce data lineage documentation via dbt docs.</li>
+                <li>Deploy the warehouse and dashboard refresh to a cloud-hosted schedule.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="repo" class="wrap cs-section">
+        <h2><span class="cs-num">16</span> GitHub Repository</h2>
+        <p class="cs-lead">Full source code, dbt models, and documentation are available on GitHub.</p>
+        <div class="repo-cta">
+            <a href="https://github.com/beatrice-wakarima/zeni_hr_analytics" target="_blank" rel="noopener noreferrer" class="pill-btn pill-cyan">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                Source Code &amp; Documentation
+            </a>
+            <a href="../../index.html#projects" class="pill-btn pill-ghost">← Back to All Projects</a>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <nav class="footer-links" aria-label="Footer">
+        <a href="../../about/index.html">About</a>
+        <a href="../../index.html#projects">Projects</a>
+        <a href="../../blog/index.html">Blog</a>
+        <a href="../../contact/index.html">Contact</a>
+    </nav>
+    <p><span class="mono">&copy; <span id="year"></span></span> Beatrice Builds. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: { fontFamily: 'JetBrains Mono, monospace' } });
+</script>
+<script src="../../assets/js/script.js"></script>
+</body>
+</html>

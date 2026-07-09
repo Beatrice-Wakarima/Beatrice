@@ -1,0 +1,21 @@
+{
+  "name": "Beatrice Builds",
+  "short_name": "Beatrice Builds",
+  "description": "Data Analytics Engineer & BI Developer portfolio — ELT pipelines, dbt warehouses, Power BI dashboards.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0c0f1a",
+  "theme_color": "#0c0f1a",
+  "icons": [
+    {
+      "src": "assets/icons/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "assets/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

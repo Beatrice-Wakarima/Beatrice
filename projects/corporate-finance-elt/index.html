@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corporate Finance & Operations ELT Pipeline — Case Study | Beatrice Builds</title>
+<meta name="description" content="Case study: a multi-domain ELT pipeline on PostgreSQL, Python, and Apache Airflow that turned siloed finance and operations data into one reliable executive reporting source.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0c0f1a">
+<link rel="canonical" href="https://beatrice-wakarima.github.io/Beatrice/projects/corporate-finance-elt/">
+
+<meta property="og:site_name" content="Beatrice Builds">
+<meta property="og:title" content="Corporate Finance & Operations ELT Pipeline — Case Study">
+<meta property="og:description" content="A multi-domain ELT pipeline turning siloed finance and operations data into one reliable executive reporting source.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://beatrice-wakarima.github.io/Beatrice/projects/corporate-finance-elt/">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Corporate Finance & Operations ELT Pipeline — Case Study">
+<meta name="twitter:description" content="A multi-domain ELT pipeline built on PostgreSQL, Python, and Apache Airflow.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="../../assets/icons/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="../../assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<link rel="stylesheet" href="../../assets/css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Corporate Finance & Operations ELT Pipeline",
+  "url": "https://beatrice-wakarima.github.io/Beatrice/projects/corporate-finance-elt/",
+  "author": { "@type": "Person", "name": "Beatrice W Wanjiru" },
+  "about": "A multi-domain ELT pipeline built on PostgreSQL, Python, and Apache Airflow",
+  "keywords": "Data Engineering, PostgreSQL, Apache Airflow, Power BI, ELT, Data Warehouse"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://beatrice-wakarima.github.io/Beatrice/" },
+    { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://beatrice-wakarima.github.io/Beatrice/#projects" },
+    { "@type": "ListItem", "position": 3, "name": "Corporate Finance & Operations ELT Pipeline", "item": "https://beatrice-wakarima.github.io/Beatrice/projects/corporate-finance-elt/" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header>
+    <nav class="navbar" aria-label="Primary">
+        <a href="../../index.html" class="nav-root">Beatrice Builds</a>
+        <ul>
+            <li><a href="../../about/index.html" class="navlink">About</a></li>
+            <li><a href="../../index.html#projects" class="navlink active" aria-current="page">Projects</a></li>
+            <li><a href="../../contact/index.html" class="navlink">Contact</a></li>
+            <li><a href="../../blog/index.html" class="navlink nav-garden">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22V12M12 12C12 12 5 12 5 6C5 4 6 2 8 2C10 2 12 4 12 6M12 12C12 12 19 12 19 6C19 4 18 2 16 2C14 2 12 4 12 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Blog
+            </a></li>
+        </ul>
+    </nav>
+</header>
+
+<main id="main-content">
+
+    <section class="wrap cs-hero">
+        <p class="cs-breadcrumb"><a href="../../index.html">Home</a> / <a href="../../index.html#projects">Projects</a> / Corporate Finance &amp; Operations ELT Pipeline</p>
+        <p class="cs-kicker">Case Study · Data Engineering</p>
+        <h1>Corporate Finance &amp; Operations ELT Pipeline</h1>
+        <p class="project-summary">A multi-domain ELT pipeline turning siloed finance and operations data into one reliable executive reporting source — built on PostgreSQL, Python, and Apache Airflow.</p>
+        <div class="case-tags">
+            <span class="tag">Python</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Apache Airflow</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">DAX</span>
+        </div>
+        <div class="cs-hero-actions">
+            <a href="https://github.com/Beatrice-Wakarima/Spaero-analytics" target="_blank" rel="noopener noreferrer" class="pill-btn pill-cyan">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                View on GitHub
+            </a>
+            <a href="../../index.html#projects" class="pill-btn pill-ghost">← All Projects</a>
+        </div>
+    </section>
+
+    <nav class="wrap toc-nav" aria-label="On this page">
+        <a href="#overview">Overview</a>
+        <a href="#snapshot">Snapshot</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#problem">Business Problem</a>
+        <a href="#objectives">Objectives</a>
+        <a href="#solution">Solution</a>
+        <a href="#decisions">Engineering Decisions</a>
+        <a href="#stack">Tech Stack</a>
+        <a href="#data-model">Data Model</a>
+        <a href="#pipeline">Pipeline Walkthrough</a>
+        <a href="#quality">Data Quality</a>
+        <a href="#impact">Business Impact</a>
+        <a href="#outcomes">Outcomes</a>
+        <a href="#lessons">Lessons Learned</a>
+        <a href="#future">Future Improvements</a>
+        <a href="#repo">Repository</a>
+    </nav>
+
+    <section id="overview" class="wrap cs-section">
+        <h2><span class="cs-num">01</span> Project Overview</h2>
+        <p class="cs-lead">Corporate financial data, revenue targets, capital budgeting schedules, and employee operational records lived across disconnected domains with no repeatable way to combine them. This project consolidates four Excel sources into a PostgreSQL warehouse through a layered ELT pipeline, orchestrated by Apache Airflow, feeding a 6-page Power BI executive dashboard via a decoupled presentation view registry.</p>
+    </section>
+
+    <section id="snapshot" class="wrap cs-section">
+        <h2><span class="cs-num">02</span> Project Snapshot</h2>
+        <table class="snapshot-table">
+            <tbody>
+                <tr><th scope="row">Business Problem</th><td>Financial, budgeting, and operational data siloed across domains, causing dashboard drift in executive reporting.</td></tr>
+                <tr><th scope="row">My Role</th><td>Solo data engineer — warehouse architecture, ELT orchestration, dashboard integration.</td></tr>
+                <tr><th scope="row">Technologies</th><td>Python, PostgreSQL, Apache Airflow, Power BI, DAX.</td></tr>
+                <tr><th scope="row">Data Sources</th><td>4 Excel sources consolidated into PostgreSQL.</td></tr>
+                <tr><th scope="row">Engineering Decisions</th><td>Decoupled view registry maps transformation layers 1-to-1 to reporting views.</td></tr>
+                <tr><th scope="row">Business Impact</th><td>Reliable daily executive reporting with no manual reconciliation and no dashboard drift.</td></tr>
+                <tr><th scope="row">Measurable Outcomes</th><td>36 SQL transformation blocks across 5 modeling layers · 6-page Power BI dashboard · zero duplicate rows on restart.</td></tr>
+                <tr><th scope="row">Lessons Learned</th><td>Idempotent design pays for itself the first time a pipeline needs a mid-run restart.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="architecture" class="wrap cs-section">
+        <h2><span class="cs-num">03</span> Architecture Diagram</h2>
+        <p class="cs-lead">Four Excel sources land in PostgreSQL, move through a layered transformation pipeline, and reach Power BI through a decoupled view registry.</p>
+        <div class="arch-diagram-wrap">
+            <div class="mermaid">
+graph LR
+    A[4 Excel Sources] --> B[Python Extractor]
+    B --> C[(PostgreSQL Staging)]
+    C --> D[SQL: Star Schema Layer]
+    D --> E[Python View Registry]
+    E --> F[22 Presentation Views]
+    F --> G[Power BI Dashboard .pbit]
+    H[Apache Airflow DAG] -.orchestrates.-> B
+    H -.orchestrates.-> D
+    G --> I[End Users: Executives]
+            </div>
+        </div>
+    </section>
+
+    <section id="problem" class="wrap cs-section">
+        <h2><span class="cs-num">04</span> Business Problem</h2>
+        <p class="cs-lead">Corporate financial data, revenue targets, capital budgeting schedules, and employee operational records lived in disconnected silos. There was no repeatable, unified way to combine these multi-domain datasets into an analytics warehouse without manual cleanup, resulting in "dashboard drift" and breaking changes in downstream executive reports.</p>
+    </section>
+
+    <section id="objectives" class="wrap cs-section">
+        <h2><span class="cs-num">05</span> Objectives</h2>
+        <div class="cs-two-col">
+            <ul>
+                <li>Consolidate 4 disconnected Excel-based domains into one PostgreSQL warehouse.</li>
+                <li>Guarantee idempotent, restartable pipeline runs with zero duplicate rows.</li>
+            </ul>
+            <ul>
+                <li>Decouple BI reporting logic from raw tables via a dedicated view layer.</li>
+                <li>Deliver a 6-page executive Power BI dashboard with reliable daily refresh.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="solution" class="wrap cs-section">
+        <h2><span class="cs-num">06</span> Solution Overview</h2>
+        <p class="cs-lead">An Apache Airflow DAG orchestrates the extraction of 4 Excel sources into PostgreSQL, followed by a 5-layer SQL transformation process (36 transformation blocks) that builds a star schema. A Python-based view registry maps each transformation layer 1-to-1 to 22 structured presentation views, which a Power BI (.pbit) template consumes directly — so BI logic never touches raw tables.</p>
+    </section>
+
+    <section id="decisions" class="wrap cs-section">
+        <h2><span class="cs-num">07</span> Engineering Decisions</h2>
+        <div class="cs-two-col">
+            <ul>
+                <li><strong>Why PostgreSQL?</strong> Strong support for structured multi-domain joins and mature tooling for a self-hosted analytics warehouse.</li>
+                <li><strong>Why Apache Airflow?</strong> Needed dependency-aware scheduling and automatic retries across a 5-layer transformation chain.</li>
+                <li><strong>Why a decoupled view registry?</strong> Keeps BI logic swappable without touching the underlying star schema — reports read from views, never raw tables.</li>
+            </ul>
+            <ul>
+                <li><strong>Why idempotent loads?</strong> A mid-run failure shouldn't require a manual cleanup before the next run — restarts must be safe by default.</li>
+                <li><strong>Why a star schema over a flat table?</strong> Multi-domain data (finance, budgeting, operations) needed shared conformed dimensions to stay joinable.</li>
+                <li><strong>Why 5 modeling layers?</strong> Each layer isolates one transformation concern — raw cleanup, conforming, star schema, aggregation, presentation.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="stack" class="wrap cs-section">
+        <h2><span class="cs-num">08</span> Technology Stack</h2>
+        <div class="tech-stack-grid">
+            <div class="tech-group"><h4>Languages</h4><ul><li>Python</li><li>SQL</li><li>DAX</li></ul></div>
+            <div class="tech-group"><h4>Data Engineering</h4><ul><li>Apache Airflow</li><li>ELT design</li></ul></div>
+            <div class="tech-group"><h4>Databases</h4><ul><li>PostgreSQL</li></ul></div>
+            <div class="tech-group"><h4>Visualization</h4><ul><li>Power BI</li></ul></div>
+            <div class="tech-group"><h4>Infrastructure</h4><ul><li>Docker</li></ul></div>
+            <div class="tech-group"><h4>Version Control</h4><ul><li>Git &amp; GitHub</li></ul></div>
+        </div>
+    </section>
+
+    <section id="data-model" class="wrap cs-section">
+        <h2><span class="cs-num">09</span> Data Model</h2>
+        <p class="cs-lead">The warehouse models finance, budgeting, and operations around a shared conformed dimension set.</p>
+        <table class="data-model-table">
+            <thead><tr><th>Table</th><th>Type</th><th>Grain</th><th>Description</th></tr></thead>
+            <tbody>
+                <tr><td class="tbl-name">dim_department</td><td>Dimension</td><td>1 row / department</td><td>Conformed department dimension shared across all domains.</td></tr>
+                <tr><td class="tbl-name">dim_date</td><td>Dimension</td><td>1 row / day</td><td>Calendar dimension for time-based reporting.</td></tr>
+                <tr><td class="tbl-name">fct_revenue</td><td>Fact</td><td>1 row / department / period</td><td>Revenue targets and actuals by department and period.</td></tr>
+                <tr><td class="tbl-name">fct_capital_budget</td><td>Fact</td><td>1 row / project / period</td><td>Capital budgeting schedules and spend tracking.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="pipeline" class="wrap cs-section">
+        <h2><span class="cs-num">10</span> Pipeline Walkthrough</h2>
+        <div class="pipeline-steps">
+            <div class="pipeline-step">
+                <div class="pipeline-step-num">1</div>
+                <div class="pipeline-step-content"><h4>Extract</h4><p>Python reads the 4 Excel sources on an Airflow-scheduled trigger.</p></div>
+            </div>
+            <div class="pipeline-step">
+                <div class="pipeline-step-num">2</div>
+                <div class="pipeline-step-content"><h4>Load (Raw)</h4><p>Raw records land in PostgreSQL staging tables, unmodified.</p></div>
+            </div>
+            <div class="pipeline-step">
+                <div class="pipeline-step-num">3</div>
+                <div class="pipeline-step-content"><h4>Transform: Conform</h4><p>Standardizes department, date, and entity naming across all 4 domains.</p></div>
+            </div>
+            <div class="pipeline-step">
+                <div class="pipeline-step-num">4</div>
+                <div class="pipeline-step-content"><h4>Transform: Star Schema</h4><p>Builds fact and dimension tables (36 SQL blocks across 5 layers).</p></div>
+            </div>
+            <div class="pipeline-step">
+                <div class="pipeline-step-num">5</div>
+                <div class="pipeline-step-content"><h4>Present</h4><p>The Python view registry maps each mart to a presentation view.</p></div>
+            </div>
+            <div class="pipeline-step">
+                <div class="pipeline-step-num">6</div>
+                <div class="pipeline-step-content"><h4>Serve</h4><p>The 6-page Power BI dashboard reads directly from presentation views.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quality" class="wrap cs-section">
+        <h2><span class="cs-num">11</span> Data Quality Strategy</h2>
+        <p class="cs-lead">Idempotent load logic guarantees the pipeline restarts cleanly from any mid-execution failure point with zero duplicate rows — validated by row-count reconciliation checks between staging and star-schema layers on every run.</p>
+    </section>
+
+    <section id="impact" class="wrap cs-section">
+        <h2><span class="cs-num">12</span> Business Impact</h2>
+        <p class="cs-lead">The entire corporate BI pipeline restarts cleanly from any mid-execution failure point with zero duplicate rows. Downstream Power BI report models ingest optimized metrics from structured views instantly, ensuring sub-second visual rendering, zero dashboard drift, and robust maintainability for executive reporting.</p>
+    </section>
+
+    <section id="outcomes" class="wrap cs-section">
+        <h2><span class="cs-num">13</span> Measurable Outcomes</h2>
+        <div class="impact-outcomes-grid">
+            <div class="outcome-tile"><div class="val">4</div><div class="lbl">Source Systems</div></div>
+            <div class="outcome-tile"><div class="val">36</div><div class="lbl">SQL Transformations</div></div>
+            <div class="outcome-tile"><div class="val">5</div><div class="lbl">Modeling Layers</div></div>
+            <div class="outcome-tile"><div class="val">6</div><div class="lbl">Dashboard Pages</div></div>
+        </div>
+    </section>
+
+    <section id="lessons" class="wrap cs-section">
+        <h2><span class="cs-num">14</span> Lessons Learned</h2>
+        <div class="cs-two-col">
+            <ul>
+                <li>Idempotency needs to be designed in from the start — retrofitting it onto a running pipeline is much harder.</li>
+                <li>A decoupled view layer makes BI tooling swappable without touching the warehouse.</li>
+            </ul>
+            <ul>
+                <li>Conformed dimensions are what actually make "multi-domain" data joinable.</li>
+                <li>Airflow's dependency graph made debugging failures far faster than a linear script would have.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="future" class="wrap cs-section">
+        <h2><span class="cs-num">15</span> Future Improvements</h2>
+        <div class="cs-two-col">
+            <ul>
+                <li>Containerize the full stack with Docker Compose for one-command deployment.</li>
+                <li>Add CI/CD via GitHub Actions to validate SQL transformations on every commit.</li>
+            </ul>
+            <ul>
+                <li>Introduce automated data-quality testing (pytest or dbt tests) alongside the SQL layer.</li>
+                <li>Add monitoring/alerting on Airflow DAG failures.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="repo" class="wrap cs-section">
+        <h2><span class="cs-num">16</span> GitHub Repository</h2>
+        <p class="cs-lead">Full source code, SQL transformations, and documentation are available on GitHub.</p>
+        <div class="repo-cta">
+            <a href="https://github.com/Beatrice-Wakarima/Spaero-analytics" target="_blank" rel="noopener noreferrer" class="pill-btn pill-cyan">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                Source Code &amp; Documentation
+            </a>
+            <a href="../../index.html#projects" class="pill-btn pill-ghost">← Back to All Projects</a>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <nav class="footer-links" aria-label="Footer">
+        <a href="../../about/index.html">About</a>
+        <a href="../../index.html#projects">Projects</a>
+        <a href="../../blog/index.html">Blog</a>
+        <a href="../../contact/index.html">Contact</a>
+    </nav>
+    <p><span class="mono">&copy; <span id="year"></span></span> Beatrice Builds. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: { fontFamily: 'JetBrains Mono, monospace' } });
+</script>
+<script src="../../assets/js/script.js"></script>
+</body>
+</html>
